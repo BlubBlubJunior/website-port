@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+  background-color: #28282B;
+  color: white;
+}    
+
+header{
+  background-color: #000000;
+  color: white;
+  height: 60px;
+  
+}
+
+nav{
+  width: 60vw;
+  height: 100%;
+  margin: 0 auto;
+
+}
+
+nav > ul{
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+nav > ul > li{
+  width: 100%;
+  height: 100%;
+}
+
+nav > ul > li > a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  color: white;
+}
+.active{
+  background:red;
+}
+
+
+.naam{
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        color: #ffffff;  
+        margin-bottom: 50spx;
+}
+.title{
+  margin-left: 45%;
+  font-size: 50px;
+}
+.provel{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        color: #ffffff;  
+       
+}
+
+.column{
+    float: left;
+    margin-left: 1.5%;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+.row::after {
+  clear: both;
+  display: table;
+  
+  
+}
+.column > a > img{
+  border-radius: 50px;
+  width: 600px;
+  height: 350px;
+}
+.column > a > img:hover{
+  transform: scale(1.05);
+}
+.TextOnImage{
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  color: white;
+  font-size: 40px;
+}
+
+
+
+.slideshow-container {
+  max-width: 100%;
+  margin-bottom: 100px;
+}
+.slide{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1000){
+  .wrap,
+  header nav,
+  footer nav {
+    width: 95%;
+
+  }
+  body{
+    background-color: red;
+  }
+  .column{
+    margin-left: 1.5%;
+    margin-top: 20px;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    
+  }
+  .slide{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+    
+  }
+  
+.column > a > img{
+  width: 470px;
+  height: 300px;
+}
+.column > a > img:hover{
+  transform: scale(1.05);
+}
+.TextOnImage{
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 40px;
+}
+@media only screen and (max-width: 600px) {
+  .wrap,
+  header nav,
+  footer nav {
+    width: 95%;
+
+  }
+  body{
+    background-color: yellow;
+  }
+  .column{
+    margin-left: 1.5%;
+    margin-top: 20px;
+  }
+  
+.column > a > img{
+  width: 400px;
+  height: 300px;
+}
+.column > a > img:hover{
+  transform: scale(1.05);
+}
+.TextOnImage{
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 40px;
+  color: yellow;
+}
+}
+}
+
+

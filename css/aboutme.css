@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+  background-color: #28282B;
+  color: white;
+  
+}  
+
+header{
+  background-color: #000000;
+  color: white;
+  height: 60px;
+}
+
+nav{
+  width: 60vw;
+  height: 100%;
+  margin: 0 auto;
+
+}
+
+nav > ul{
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+nav > ul > li{
+  width: 100%;
+  height: 100%;
+}
+
+nav > ul > li > a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  color: white;
+}
+.active{
+  background:red;
+}
+
+.Tital{
+  margin-top: 150px;
+  font-size: 50px;
+  margin-left: 10%;
+  height: 100px;
+  width: 40%;
+}
+img{
+  
+  float: right;
+  border: 1px dotted black;
+  margin-right: 15%; 
+  
+}
+.AboutMe{
+  font-size: 30px;
+  margin: 1px;
+  margin-left: 10%;
+  height: 250px;
+  width: 40%;
+}
+.Tital2{
+  margin-top: 150px;
+  font-size: 50px;
+  margin-left: 10%;
+  height: 100px;
+  width: 40%;
+}
+.pro{
+  font-size: 30px;
+  margin: 1px;
+  margin-left: 10%;
+  height: 250px;
+  width: 40%;
+}
+
+.contact{
+  float: right;
+  width: 30%;
+  height: 200px;
+  font-size: 50px;
+  
+}
+.contact2{
+  float: right;
+  width: 30%;
+  height: 200px;
+  font-size: 50px;
+  
+}
+.github{
+  width: 100px;
+  height: 100px;
+  margin-left: 1200px;
+  
+  
+}
+.CV{
+  float: left;
+  width: 700px;
+  height: 300;
+  margin: 10px;
+  margin-left: 50px;
+}
+
+.clickable{
+  margin-left: 100px;
+  font-size: 10px;
+}
+
