@@ -82,7 +82,7 @@ img{
   font-size: 30px;
   margin: 1px;
   margin-left: 10%;
-  height: 250px;
+  height: 150px;
   width: 40%;
 }
 
@@ -100,23 +100,33 @@ img{
   font-size: 50px;
   
 }
-.github{
-  width: 100px;
-  height: 100px;
-  margin-left: 1200px;
-  
-  
+.container-Skills{
+  float: right;
+  font-size: 40px;
+  margin-right: 25%; 
+  margin-bottom: 130px;
+
 }
-.CV{
-  float: left;
-  width: 700px;
-  height: 300;
-  margin: 10px;
-  margin-left: 50px;
+.github {
+  width: 250px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  background-color: rgb(223, 192, 21);
+  text-align: center;
+  margin-left: 10%;
 }
 
-.clickable{
-  margin-left: 100px;
-  font-size: 10px;
+.linkToGit {
+  color: black;
+  margin: 0;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.linkToGit:hover {
+  text-decoration: underline; /* Add this line to remove the underline on hover */
 }
 
