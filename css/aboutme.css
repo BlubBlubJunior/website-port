@@ -85,13 +85,11 @@ img{
   height: 150px;
   width: 40%;
 }
-
 .contact{
   float: right;
   width: 30%;
   height: 200px;
   font-size: 50px;
-  
 }
 .contact2{
   float: right;
@@ -100,12 +98,27 @@ img{
   font-size: 50px;
   
 }
+.github{
+  width: 100px;
+  height: 100px;
+}
+.CV{
+  float: left;
+  width: 700px;
+  height: 300;
+  margin: 10px;
+  margin-left: 50px;
+}
+
+.clickable{
+  margin-left: 100px;
+  font-size: 10px;
+}
 .container-Skills{
   float: right;
   font-size: 40px;
   margin-right: 25%; 
   margin-bottom: 130px;
-
 }
 .github {
   width: 250px;
@@ -127,6 +140,5 @@ img{
 }
 
 .linkToGit:hover {
-  text-decoration: underline; /* Add this line to remove the underline on hover */
+  text-decoration: underline;
 }
-

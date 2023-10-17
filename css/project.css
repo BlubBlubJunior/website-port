@@ -63,8 +63,8 @@ nav{
   .ContainerVideo{
     display: block;
     margin: 10px auto;
-    width: 700px;
-    height: 400px;
+    width: 800px;
+    height: 500px;
   }
   .github {
     width: 250px;
@@ -109,6 +109,17 @@ nav{
     margin-top: 20px;
     border-radius: 20px;
   }
+  .img2{
+    width: 600px;
+    height: 400px;
+    margin-left: 20%;
+    border-radius: 20px;
+  }
+  .img3{
+    width: 1300px;
+    height: 600px;
+    margin-left: 20%;
+  }
   .container {
     float: right;
     width: 600px;
@@ -125,7 +136,13 @@ nav{
     margin-bottom: 20px;
   }
   .learned1{
-    font-size: 30px;}
+    font-size: 30px;
+  }
+  
+  .learned2{
+      font-size: 30px;
+      margin: 25px;
+    }
   
   .fixcontainer{
       width: 600px;
@@ -136,6 +153,16 @@ nav{
       float: left;
       margin-left: 8%;
   }
+  .container2{
+    width: 1800px;
+    height: 2000px;
+  }
+  .fixcontainer2{
+    width: 600px;
+    height: 400px;
+    float: left;
+    margin-left: 8%;
+}
   .Whattofix{
     margin-left: 22%;
     font-size: 50px;
