@@ -98,10 +98,6 @@ img{
   font-size: 50px;
   
 }
-.github{
-  width: 100px;
-  height: 100px;
-}
 .CV{
   float: left;
   width: 700px;
@@ -130,6 +126,7 @@ img{
   background-color: rgb(223, 192, 21);
   text-align: center;
   margin-left: 10%;
+  
 }
 
 .linkToGit {
