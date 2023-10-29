@@ -146,15 +146,10 @@ img{
 .linkToGit:hover {
   text-decoration: underline;
 }
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1600px) {
 .Tital{
-  margin-top: 5%;
-  font-size: 50px;
-  margin-left: 10%;
-  height: 100px;
-  width: 40%;
-  display: flex;
-  justify-content: center;
+  font-size: 40px;
+  margin-left: 8%;
 }
 img{
   
@@ -165,11 +160,7 @@ img{
 }
 .AboutMe{
   font-size: 25px;
-  margin: 1px;
   margin-left: 8%;
-  height: 250px;
-  width: 40%;
-  text-align: center;
 }
 .Tital2{
   margin-top: 3%;
@@ -177,8 +168,6 @@ img{
   margin-left: 10%;
   height: 100px;
   width: 80%;
-  display: flex;
-  justify-content: center;
 }
 .pro{
   font-size: 30px;
@@ -186,7 +175,6 @@ img{
   margin-left: 10%;
   height: 150px;
   width: 80%;
-  text-align: center;
 }
 .contact{
   float: right;
@@ -222,22 +210,15 @@ img{
 .github {
   width: 80%;
   height: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 10px auto;
-  background-color: rgb(223, 192, 21);
-  text-align: center;
   margin-left: 10%;
   margin-top: 3%;
   
 }
 
 .linkToGit {
-  color: rgb(255, 255, 255);
   margin: 0;
   font-size: 40px;
-  text-decoration: none;
 }
 }
 @media screen and (max-width: 800px) {
