@@ -6,6 +6,7 @@
 body{
   background-color: #28282B;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
 }    
 
 header{
@@ -50,29 +51,50 @@ nav > ul > li > a{
   background:red;
 }
 
-
-.naam{
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 50px;
-        color: #ffffff;  
-        margin-bottom: 50spx;
+.slideshow-container {
+  position: relative;
+  text-align: center;
 }
+
+.naam {
+  position: absolute;
+  top: 42%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+}
+.provel{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+}
+
+.image-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.slide {
+  width: 100%;
+}
+
 .title{
   margin-left: 45%;
   font-size: 50px;
-}
-.provel{
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 50px;
-        color: #ffffff;  
-       
 }
 
 .column{

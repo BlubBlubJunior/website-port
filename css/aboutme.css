@@ -6,7 +6,7 @@
 body{
   background-color: #28282B;
   color: white;
-  
+  text-shadow: 2px 2px 4px #000000;
 }  
 
 header{
@@ -51,11 +51,13 @@ nav > ul > li > a{
 }
 
 .Tital{
-  margin-top: 150px;
+  margin-top: 5%;
   font-size: 50px;
   margin-left: 10%;
   height: 100px;
   width: 40%;
+  display: flex;
+  justify-content: center;
 }
 img{
   
@@ -70,20 +72,24 @@ img{
   margin-left: 10%;
   height: 250px;
   width: 40%;
+  text-align: center;
 }
 .Tital2{
-  margin-top: 150px;
+  margin-top: 3%;
   font-size: 50px;
   margin-left: 10%;
   height: 100px;
-  width: 40%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
 }
 .pro{
   font-size: 30px;
   margin: 1px;
   margin-left: 10%;
   height: 150px;
-  width: 40%;
+  width: 80%;
+  text-align: center;
 }
 .contact{
   float: right;
@@ -117,7 +123,7 @@ img{
   margin-bottom: 130px;
 }
 .github {
-  width: 250px;
+  width: 80%;
   height: 75px;
   display: flex;
   justify-content: center;
@@ -126,11 +132,12 @@ img{
   background-color: rgb(223, 192, 21);
   text-align: center;
   margin-left: 10%;
+  margin-top: 3%;
   
 }
 
 .linkToGit {
-  color: black;
+  color: rgb(255, 255, 255);
   margin: 0;
   font-size: 40px;
   text-decoration: none;
@@ -138,4 +145,108 @@ img{
 
 .linkToGit:hover {
   text-decoration: underline;
+}
+@media screen and (max-width: 1220px) {
+.Tital{
+  margin-top: 5%;
+  font-size: 50px;
+  margin-left: 10%;
+  height: 100px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+img{
+  
+  float: right;
+  border: 1px dotted black;
+  margin-right: 8%; 
+  
+}
+.AboutMe{
+  font-size: 25px;
+  margin: 1px;
+  margin-left: 8%;
+  height: 250px;
+  width: 40%;
+  text-align: center;
+}
+.Tital2{
+  margin-top: 3%;
+  font-size: 50px;
+  margin-left: 10%;
+  height: 100px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.pro{
+  font-size: 30px;
+  margin: 1px;
+  margin-left: 10%;
+  height: 150px;
+  width: 80%;
+  text-align: center;
+}
+.contact{
+  float: right;
+  width: 30%;
+  height: 200px;
+  font-size: 50px;
+}
+.contact2{
+  float: right;
+  width: 30%;
+  height: 200px;
+  font-size: 50px;
+  
+}
+.CV{
+  float: left;
+  width: 700px;
+  height: 300;
+  margin: 10px;
+  margin-left: 50px;
+}
+
+.clickable{
+  margin-left: 100px;
+  font-size: 10px;
+}
+.container-Skills{
+  float: right;
+  font-size: 40px;
+  margin-right: 25%; 
+  margin-bottom: 130px;
+}
+.github {
+  width: 80%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  background-color: rgb(223, 192, 21);
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 3%;
+  
+}
+
+.linkToGit {
+  color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: 40px;
+  text-decoration: none;
+}
+}
+@media screen and (max-width: 800px) {
+  body{
+    background-color: blue;
+  }
+}
+@media screen and (max-width: 480px) {
+    body{
+      background-color: red;
+    }
 }
