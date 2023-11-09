@@ -147,7 +147,7 @@ img{
   text-decoration: underline;
 }
 @media screen and (max-width: 1600px) {
-.Tital{
+  .Tital{
   font-size: 40px;
   margin-left: 8%;
 }
@@ -269,6 +269,10 @@ img{
   }
 }
 @media screen and (max-width: 480px) {
+  
+  body{
+    font-size: 20px;
+  }
       .Tital{
         font-size: 40px;
         height: 50px;
@@ -280,13 +284,13 @@ img{
         margin-left: 10%;
       }
       .AboutMe{
-        height: 100px;
+        height: 140px;
         font-size: 15px;
         width: 90%;
         margin: 5%;
       }
       .Tital2{
-        margin-top: 3%;
+        margin-top: 5%;
         font-size: 30px;
         margin-left: 10%;
         height: 60px;
@@ -304,7 +308,7 @@ img{
         height: 75px;
         margin: 10px auto;
         margin-left: 10%;
-        margin-top: 15%;
+        margin-top: 20%;
         
       }
       

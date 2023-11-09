@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ruben Kossen</title>
     <link rel="stylesheet" href="css/project.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             </ul>
         </nav>
       </header> 
-      <h1 class="title2">StarFalls</h1>
+      <h1 class="title">StarFalls</h1>
 
       <img class="img1" src="img/starfalls.png" alt="">
 
@@ -28,7 +28,7 @@
         The game also features various storylines that enhance the overall gaming experience. </div>
         
       <div class="container">
-        <div class="learned">What have i learned</div>
+        <div class="learned">What have I learned</div>
         <div class="learned1">During this period, I have been working extensively with the Scrum framework and participating in 
           daily stand-up meetings. Additionally, 
           I have expanded my understanding of coding conventions, 
@@ -36,20 +36,191 @@
       </div>
     </div>
     <div class="fixcontainer">
-      <div class="Whattofix">On what did i work</div>
-      <div class="fix">At the Starfall office, I was involved in creating a successful dropping platform and a well-functioning spawner manager.</div>
+      <div class="Whattofix">On what did I work</div>
+      <div class="fix">At the Starfall office, I was involved in creating a 
+        successful dropping platform and a well-functioning spawner manager.</div>
     </div>
   </div>
   <div class="container2">
-    <div class="title2">Spawner</div>
+    <div class="title">Spawner</div>
   <div class="ContainerVideo">
     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Nm9z-Ik2n50?si=oTQlq69AZh5FQGJC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
+  
   <div class="fixcontainer2">
-    <img class="img2" src="img/spawner1.png" alt="">
-    <img class="img3" src="img/spawner2.png" alt="">
+    <pre>
+      using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
+public class Spawner : MonoBehaviour
+{
+    [SerializeField]
+    private List<BaseSpawnCondition> _spawnConditions = new List<BaseSpawnCondition>();
+
+    private Dictionary<SpawnConditionsTypes, BaseSpawnCondition> spawnTypes = new Dictionary<SpawnConditionsTypes, BaseSpawnCondition>()
+    {
+        {SpawnConditionsTypes.Timer, new RandomTimer()},
+        {SpawnConditionsTypes.WaitForDeath, new DeathOfEnemies()}
+    };
+
+    [FormerlySerializedAs("conditions")]
+    [Header("Spawner Settings")]
+    [SerializeField] public SpawnConditionsTypes conditionsTypes;
+
+    [SerializeField] private RangeShape rangeType;
+ 
+    [SerializeField] private float size;
+    [SerializeField] private List<Transform> waypoints = new List<Transform>();
+    [SerializeField] List<GameObject> enemyList = new List<GameObject>();
+    [SerializeField] private GameObject prefab;
+
+    [Header("Single Spawner Settings")]
+    [SerializeField] private GameObject setSpawnPoint;
+    
+    private bool _isRandomSpawnEnable;
+    private bool _isSingleSpawnEnabled;
+
+    private Rect _spawnArea = new Rect(0, 0, 10f, 10f);
+
+    [SerializeField] private bool keepSpawning;
+    [SerializeField] private int maxAmountEnemiesSpawned;
+
+    public void ConfigureConditions()
+    {
+        foreach (SpawnConditionsTypes value in System.Enum.GetValues(typeof(SpawnConditionsTypes)))
+        {
+            if (conditionsTypes.HasFlag(value))
+            {
+                if(spawnTypes.TryGetValue(value, out BaseSpawnCondition spawnMethod))
+                {
+                    _spawnConditions.Add(spawnMethod);
+                }
+            }
+        }
+    }
+
+    void Update()
+    {
+        RemoveDestroyedEnemies();
+
+        if (!keepSpawning)
+            return;
+        
+        SpawnEnemy();
+    }
+
+    public void SpawnEnemy()
+    {
+        if (enemyList.Count >= maxAmountEnemiesSpawned)
+            return;
+
+        foreach (var condition in _spawnConditions)
+        {
+            if(!condition.IsAllowedToSpawn())
+                return;   
+        }
+
+        GameObject newEnemy = Instantiate(prefab, rangeType == RangeShape.Circle ? CircleRange() : CubesRange(), Quaternion.identity);
+        newEnemy.GetComponent<PatrolState>()?.ReplaceWaypoints(waypoints);
+
+        enemyList.Add(newEnemy);
+        newEnemy.name = newEnemy.name.Replace("(Clone)", "");
+    }
+   
+    private Vector3 CircleRange()
+    {
+        float radius = size / 2.0f;
+        float randomRadius = Random.Range(0f, radius);
+        
+        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+
+        float randomX = randomRadius * Mathf.Cos(angle) + transform.position.x;
+        float randomY = randomRadius * Mathf.Sin(angle) + transform.position.y;
+        float randomZ = transform.position.z;
+        
+        return new Vector3(randomX,randomY,randomZ);
+    }
+
+    private Vector3 CubesRange()
+    {
+        float halfSize = size / 2.0f;
+        float randomX = Random.Range(-halfSize, halfSize) + transform.position.x;
+        float randomY = Random.Range(-halfSize, halfSize) + transform.position.y;
+        float randomZ = transform.position.z;
+       
+        return new Vector3(randomX,randomY,randomZ);
+    }
+    /*
+   public void InstantSingle()
+   {
+       if (_isSingleSpawnEnabled)
+           AlphaInstantiate(enemy, setSpawnPoint.transform.position);
+       _isSingleSpawnEnabled = (enemyList.Count != enemiesCount);
+   }
+   public void OnSingleTimerSpawn()
+   {
+       spawnTimer -= Time.deltaTime;
+       if (spawnTimer <= 0)
+           AlphaInstantiate(enemy, setSpawnPoint.transform.position);
+   }
+   public void GetSingleSpawnPoint()
+   { 
+       if (_isSingleSpawnEnabled)
+       {
+           spawnTimer -= Time.deltaTime;
+           if (spawnTimer <= 0)
+               AlphaInstantiate(enemy, setSpawnPoint.transform.position);
+       }
+       _isSingleSpawnEnabled = (enemyList.Count != enemiesCount);
+   }*/
+    /*
+    public void InstantRandom()
+    {
+        if (_isRandomSpawnEnable)
+            AlphaInstantiate(enemy, _spawnPosition);
+        
+        _isRandomSpawnEnable = (enemyList.Count != enemiesCount);
+    }*/
+
+    void RemoveDestroyedEnemies()
+    {
+        enemyList.RemoveAll(item => item == null);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 currentPosition = transform.position;
+        
+        _spawnArea.width = size;
+        _spawnArea.height = size;
+
+        if (rangeType == RangeShape.Circle)
+        {
+            float radius = size / 2.0f;
+            Vector3 center = currentPosition;
+            Handles.DrawWireDisc(center, Vector3.forward, radius);
+        }
+        else
+        {
+            float halfSize = size / 2.0f;
+            Vector3 minBounds = currentPosition + new Vector3(_spawnArea.x - halfSize, _spawnArea.y - halfSize, 0);
+            Vector3 maxBounds = currentPosition + new Vector3(_spawnArea.x + halfSize, _spawnArea.y + halfSize, 0);
+            
+            Vector3 center = Vector3.Lerp(minBounds, maxBounds, 0.5f);
+            Vector3 sizeVector = new Vector3(_spawnArea.width, _spawnArea.height, 0);
+
+            Gizmos.DrawWireCube(center, sizeVector);
+        }
+        
+        Gizmos.color = Color.red;
+    }
+}
+    </pre>
+    
   </div>
-  <div class="container">
+  <div class="container3">
     <div class="learned2"> The code spawns enemies using an algorithm. 
       Initially, it asks for the type of spawner, which can be either in the form of circles or cubes. 
       Upon instantiation, it changes the name of the instance, resets multiple timers, and adds objects to a list that 
@@ -65,13 +236,89 @@
   <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fZS2HYzruow?si=Pz0sJHqNADFuEJf7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <div class="fixcontainer2">
-  <img class="img2" src="img/platform1.png" alt="">
-  <img class="img3" src="img/platform2.png" alt="">
+  <pre>using UnityEngine;
+    using UnityEngine.Events;
+    using UnityEngine.Serialization;
+    
+    public class DroppingPlatform : MonoBehaviour
+    {
+        [SerializeField] private float currentBreakTime;
+        [SerializeField] private float respawnTime;
+        [SerializeField] private GameObject targetPlatform;
+    
+        private float _breakDuration;
+        private float _objectsOnPlatform;
+    
+        [SerializeField] private UnityEvent onObjectEnter;
+        [SerializeField] private UnityEvent onObjectLeave; 
+        [SerializeField] private UnityEvent onDrop;
+        
+        private bool _isBreaking = false;
+        private bool _isDropped = false;
+        
+        [SerializeField] public PlatformDropTypes dropType = PlatformDropTypes.BreakAfterTime;
+        public PlatformDropTypes Id
+       {
+           get => dropType;
+           set => dropType = value;
+       }
+    
+        void Start()
+        {
+            _breakDuration = currentBreakTime;
+        }
+    
+        void Update()
+        {
+            if (_isDropped == true) {return; }
+            CheckDropState();
+            UpdateBreaking();
+        }
+        private void UpdateBreaking()
+        {
+            if(!_isBreaking){return;}
+            if (!(_objectsOnPlatform > 0) && dropType != PlatformDropTypes.BreakAfterCollision) return;
+            var multiplier = Mathf.Max(1, _objectsOnPlatform);
+            currentBreakTime -= Time.deltaTime * multiplier;
+        }
+        public void OnPLatform()
+        {
+            _isBreaking = true;
+            _objectsOnPlatform++;
+            onObjectEnter?.Invoke();
+        }
+        public void LeavesPlatform()
+        {
+            _objectsOnPlatform--;
+            onObjectLeave.Invoke();
+        }
+        private void CheckDropState()
+        {
+            if (currentBreakTime > 0) {return;}
+            Drop();
+        }
+        private void Drop()
+        {
+            _isDropped = true;
+            _isBreaking = false;
+            targetPlatform.SetActive(false);
+            
+            Invoke ("RespawnPlatform", respawnTime);
+            _objectsOnPlatform = 0;
+            onDrop.Invoke();
+        }
+        private void RespawnPlatform()
+        {
+            currentBreakTime = _breakDuration;
+            targetPlatform.SetActive(true);
+            _isDropped = false;
+        }
+    }</pre>
 </div>
-<div class="container">
+<div class="container3">
   <div class="learned2"> 
     With the following code, I collaborated with another developer to create a platform that disappears when you step on it. 
-    We utilized a custom trigger-box in the code snippet provided below.
+    We utilized a custom trigger-box in the code snippet provided left.
 
 </div>
 </div>

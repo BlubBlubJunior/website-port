@@ -140,17 +140,37 @@ nav > ul > li > a{
   background-size: cover;
   margin-bottom: 50px;
 }
-@media screen and (max-width: 1600) {
-  
-}
-@media screen and (max-width: 800px) {
-  body{
-    background-color: blue;
+@media screen and (max-width: 1600px) {
+  .column > a > img{
+  border-radius: 50px;
+  width: 459px;
+  height: 250px;
   }
 }
+@media screen and (max-width: 800px) {
+  .column > a > img{
+    border-radius: 50px;
+    width: 700px;
+    height: 350px;
+    margin-left: 5%;
+    }
+    .TextOnImage{
+      bottom: 50px;
+      left: 80px;
+      font-size: 40px;
+    }
+}
 @media screen and (max-width: 480px) {
-    body{
-      background-color: red;
+  .column > a > img{
+    border-radius: 50px;
+    width: 400px;
+    height: 150px;
+    margin-left: 7%;
+    }
+    .TextOnImage{
+      bottom: 30px;
+      left: 50px;
+      font-size: 20px;
     }
 }
 
