@@ -186,11 +186,27 @@ nav{
     margin-left: 15%;
     font-size: 30px;
   }
+  .container5{
+    float: right;
+    width: 600px;
+    height: 400px;
+    margin-right: 20%;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
   
   @media screen and (max-width: 1600px) {
     .title{
       width: 100%;
       font-size: 50px;
+    }
+    .container5{
+      float: right;
+      width: 600px;
+      height: 400px;
+      margin-right: 13%;
+      margin-top: 20px;
+      border-radius: 20px;
     }
     pre {
       width: 600px;
@@ -270,10 +286,10 @@ nav{
       }
     
     .fixcontainer{
-        width: 600px;
+        width: 650px;
         height: 400px;
         padding: 20px;
-        margin-left: 4%;
+        margin-left: 2%;
     }
     .ContainerVideo{
       width: 800px;
