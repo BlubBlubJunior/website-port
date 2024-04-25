@@ -1,330 +1,359 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
-body{
+
+body {
   background-color: #28282B;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-}    
+}
 
-header{
+header {
   background-color: #000000;
   color: white;
-  height: 60px;
+  height: 3.5vw; /* Changed height to vw */
 }
 
-nav{
-    width: 60vw;
-    height: 100%;
-    margin: 0 auto;
-  
-  }
-  
-  nav > ul{
-    display: flex;
-    list-style: none;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 20px;
-  }
-  
-  nav > ul > li{
-    width: 100%;
-    height: 100%;
-  }
-  
-  nav > ul > li > a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 60px;
-    text-decoration: none;
-    color: white;
-  }
-  .title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-    font-size: 40px;
-  }
-  .ContainerVideo{
-    display: block;
-    margin: 10px auto;
-    margin-bottom: 1%;
-    width: 800px;
-    height: 500px;
-  }
-  .github {
-    width: 250px;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px auto;
-    background-color: rgb(223, 192, 21);
-    text-align: center;
-  }
-  
-  .linkToGit {
-    color: rgb(255, 255, 255);
-    margin: 0;
-    font-size: 40px;
-    text-decoration: none;
-  }
-  
-  .linkToGit:hover {
-    text-decoration: underline; /* Add this line to remove the underline on hover */
-  }
-  .whatitabout{
-    margin-left: 10%;
-    font-size: 50px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    display: flex;
+nav {
+  width: 60vw;
+  height: 100%;
+  margin: 0 auto;
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.25vw; /* Changed gap to vw */
+}
+
+nav > ul > li {
+  width: 100%;
+  height: 100%;
+}
+
+nav > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 3.5vw; /* Changed line-height to vw */
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  width: 100%;
+  display: flex;
   justify-content: center;
-    
-  }
-  .whatitabouttext{
-    width: 600px;
-    height: 350px;
-    margin-left: 15%;
-    font-size: 30px;
-    text-align: center;
-  }
-  .img1{
-    float: right;
-    width: 600px;
-    height: 400px;
-    margin-right: 20%;
-    margin-top: 20px;
-    border-radius: 20px;
-  }
- 
-  pre {
-    width: 800px;
-    height: 600px;
-    background-color: #1E1E1E;
-    color: #FFFFFF;
-    padding: 20px;
-    border-radius: 20px;
-    overflow-y: scroll;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-left: auto;
-    margin-right: auto;
-    margin-left: 30%;
-    border-radius: 20px;
+  margin-top: 2vw; /* Changed margin-top to vw */
+  font-size: 4vw; /* Changed font-size to vw */
 }
- 
-  .container {
-    float: right;
-    width: 600px;
-    height: 400px;
-    margin-right: 20%;
-    margin-top: 20px;
-    border-radius: 20px;
-    justify-content: center;
-    text-align: center;
+
+.ContainerVideo {
+  display: block;
+  margin: 1vw auto; /* Changed margin to vw */
+  width: 50vw; /* Changed width to vw */
+  height: 31.25vw; /* Changed height to vw */
 }
+
+.github {
+  width: 31.25vw; /* Changed width to vw */
+  height: 4vw; /* Changed height to vw */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.3125vw auto; /* Changed margin to vw */
+  background-color: rgb(223, 192, 21);
+  text-align: center;
+}
+
+.linkToGit {
+  color: rgb(255, 255, 255);
+  margin: 0;
+  font-size: 2.5vw; /* Changed font-size to vw */
+  text-decoration: none;
+}
+
+.linkToGit:hover {
+  text-decoration: underline;
+}
+
+.whatitabout {
+  margin-left: 1.25vw; 
+  font-size: 4vw; 
+  margin-bottom: 1.875vw; 
+  margin-top: 1.25vw; 
+  display: flex;
+  justify-content: center;
+}
+
+.whatitabouttext {
+  width: 37.5vw; /* Changed width to vw */
+  height: 21.875vw; /* Changed height to vw */
+  margin-left: 8vw; /* Changed margin-left to vw */
+  font-size: 2vw; /* Changed font-size to vw */
+  text-align: center;
+}
+
+.img1 {
+  float: right;
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  margin-right: 10vw; /* Changed margin-right to vw */
+  margin-top: 1.25vw; /* Changed margin-top to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+}
+
+pre {
+  width: 50vw; /* Changed width to vw */
+  height: 37.5vw; /* Changed height to vw */
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  padding: 2.5vw; /* Changed padding to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+  overflow-y: scroll;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875vw; /* Changed font-size to vw */
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 3.75vw; /* Changed margin-left to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+}
+
+.container {
+  float: right;
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  margin-right: 10vw; /* Changed margin-right to vw */
+  margin-top: 1.25vw; /* Changed margin-top to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+  justify-content: center;
+  text-align: center;
+}
+
 .container3 {
   float: right;
-    width: 600px;
-    height: 400px;
-    margin-right: 10%;
-    margin-top: 20px;
-    border-radius: 20px;
-    justify-content: center;
-    text-align: center;
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  margin-right: 5vw; /* Changed margin-right to vw */
+  margin-top: 1.25vw; /* Changed margin-top to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+  justify-content: center;
+  text-align: center;
 }
-  .learned{
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
-  .learned1{
-    font-size: 30px;
-  }
-  
-  .learned2{
-      font-size: 35px;
-      margin: 25px;
-    }
-  
-  .fixcontainer{
-      width: 600px;
-      height: 400px;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      float: left;
-      margin-left: 10%;
-  }
-  .container2{
-    width: 1800px;
-    height: 1600px;
-  }
-  .fixcontainer2{
-    width: 600px;
-    height: 400px;
-    float: left;
+
+.learned {
+  font-size: 4vw; /* Changed font-size to vw */
+  margin-bottom: 1.25vw; /* Changed margin-bottom to vw */
 }
-  .Whattofix{
-    margin-left: 22%;
-    font-size: 50px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-  }
-  .fix{
-    width: 600px;
-    height: 400px;
-    margin-left: 15%;
-    font-size: 30px;
-  }
-  .container5{
-    float: right;
-    width: 600px;
-    height: 400px;
-    margin-right: 20%;
-    margin-top: 20px;
-    border-radius: 20px;
-  }
-  
-  @media screen and (max-width: 1600px) {
-    .title{
+
+.learned1 {
+  font-size: 2.5vw; /* Changed font-size to vw */
+}
+
+.learned2 {
+  font-size: 1.9vw; /* Changed font-size to vw */
+  margin: 1.5625vw; /* Changed margin to vw */
+}
+
+.fixcontainer {
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  justify-content: center;
+  text-align: center;
+  padding: 1.25vw; /* Changed padding to vw */
+  float: left;
+  margin-left: 6.25vw; /* Changed margin-left to vw */
+}
+
+.container2 {
+  width: 100%;
+  height: 80vw; /* Changed height to vw */
+}
+
+.fixcontainer2 {
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  float: left;
+}
+
+.Whattofix {
+  margin-left: 6.875vw; /* Changed margin-left to vw */
+  font-size: 4vw; /* Changed font-size to vw */
+  margin-bottom: 1.875vw; /* Changed margin-bottom to vw */
+  margin-top: 1.25vw; /* Changed margin-top to vw */
+}
+
+.fix {
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  margin-left: 1.875vw; /* Changed margin-left to vw */
+  font-size: 2.5vw; /* Changed font-size to vw */
+}
+
+.container5 {
+  float: right;
+  width: 37.5vw; /* Changed width to vw */
+  height: 25vw; /* Changed height to vw */
+  margin-right: 10vw; /* Changed margin-right to vw */
+  margin-top: 1.25vw; /* Changed margin-top to vw */
+  border-radius: 1.25vw; /* Changed border-radius to vw */
+}
+
+@media screen and (max-width: 1600px) {
+  .title {
       width: 100%;
-      font-size: 50px;
-    }
-    .container5{
+      font-size: 3.125vw; /* Changed font-size to vw */
+  }
+
+  .container5 {
       float: right;
-      width: 600px;
-      height: 400px;
-      margin-right: 13%;
-      margin-top: 20px;
-      border-radius: 20px;
-    }
-    pre {
-      width: 600px;
-      height: 400px;
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      margin-right: 8.125vw; /* Changed margin-right to vw */
+      margin-top: 1.25vw; /* Changed margin-top to vw */
+      border-radius: 1.25vw; /* Changed border-radius to vw */
+  }
+
+  pre {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
       background-color: #1E1E1E;
       color: #FFFFFF;
-      padding: 20px;
-      border-radius: 20px;
+      padding: 1.25vw; /* Changed padding to vw */
+      border-radius: 1.25vw; /* Changed border-radius to vw */
       overflow-y: scroll;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 14px;
+      font-size: 0.875vw; /* Changed font-size to vw */
       line-height: 1.6;
       margin-left: auto;
       margin-right: auto;
-      margin-left: 13%;
-      border-radius: 20px;
+      margin-left: 8.125vw; /* Changed margin-left to vw */
+      border-radius: 1.25vw; /* Changed border-radius to vw */
   }
-    .github {
-      width: 250px;
-      height: 75px;
-      margin: 5px auto;
-    }
-    
-    .linkToGit {
+
+  .github {
+      width: 15.625vw; /* Changed width to vw */
+      height: 4.6875vw; /* Changed height to vw */
+      margin: 0.3125vw auto; /* Changed margin to vw */
+  }
+
+  .linkToGit {
       margin: 0;
-      font-size: 40px;
-    }
-    .whatitabout{
-      margin-left: 8%;
-      font-size: 50px;
-      margin-bottom: 30px;
-      margin-top: 20px;
-      
-    }
-    .whatitabouttext{
-      width: 500px;
-      height: 450px;
-      margin-left: 12%;
-      font-size: 30px;
-    }
-    .img1{
-      width: 600px;
-      height: 400px;
-      margin-right: 8%;
-      margin-top: 20px;
-      border-radius: 20px;
-    }
-    .img2{
-      width: 600px;
-      height: 400px;
-      margin-left: 12%;
-      border-radius: 20px;
-    }
-    .img3{
-      width: 1300px;
-      height: 600px;
-      margin-left: 12%;
-    }
-    .container, .container3 {
-      width: 600px;
-      height: 400px;
-      margin-right: 8%;
-      margin-top: 20px;
+      font-size: 2.5vw; /* Changed font-size to vw */
   }
-  
-    .learned{
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
-    .learned1{
-      font-size: 30px;
-    }
-    
-    .learned2{
-        font-size: 29px;
-        margin: 25px;
-      }
-    
-    .fixcontainer{
-        width: 650px;
-        height: 400px;
-        padding: 20px;
-        margin-left: 2%;
-    }
-    .ContainerVideo{
-      width: 800px;
-      height: 500px;
-      margin-bottom: 2%;
-    }
-    .container2{
+
+  .whatitabout {
+      margin-left: 5vw; /* Changed margin-left to vw */
+      font-size: 3.125vw; /* Changed font-size to vw */
+      margin-bottom: 1.875vw; /* Changed margin-bottom to vw */
+      margin-top: 1.25vw; /* Changed margin-top to vw */
+  }
+
+  .whatitabouttext {
+      width: 31.25vw; /* Changed width to vw */
+      height: 28.125vw; /* Changed height to vw */
+      margin-left: 6vw; /* Changed margin-left to vw */
+      font-size: 2.5vw; /* Changed font-size to vw */
+  }
+
+  .img1 {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      margin-right: 5vw; /* Changed margin-right to vw */
+      margin-top: 1.25vw; /* Changed margin-top to vw */
+      border-radius: 1.25vw; /* Changed border-radius to vw */
+  }
+
+  .img2 {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      margin-left: 6vw; /* Changed margin-left to vw */
+      border-radius: 1.25vw; /* Changed border-radius to vw */
+  }
+
+  .img3 {
+      width: 81.25vw; /* Changed width to vw */
+      height: 37.5vw; /* Changed height to vw */
+      margin-left: 6vw; /* Changed margin-left to vw */
+  }
+
+  .container,
+  .container3 {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      margin-right: 5vw; /* Changed margin-right to vw */
+      margin-top: 1.25vw; /* Changed margin-top to vw */
+  }
+
+  .learned {
+      font-size: 3.125vw; /* Changed font-size to vw */
+      margin-bottom: 1.25vw; /* Changed margin-bottom to vw */
+  }
+
+  .learned1 {
+      font-size: 2.5vw; /* Changed font-size to vw */
+  }
+
+  .learned2 {
+      font-size: 2.3125vw; /* Changed font-size to vw */
+      margin: 1.5625vw; /* Changed margin to vw */
+  }
+
+  .fixcontainer {
+      width: 39.0625vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      padding: 1.25vw; /* Changed padding to vw */
+      margin-left: 0.625vw; /* Changed margin-left to vw */
+  }
+
+  .ContainerVideo {
+      width: 50vw; /* Changed width to vw */
+      height: 31.25vw; /* Changed height to vw */
+      margin-bottom: 1.25vw; /* Changed margin-bottom to vw */
+  }
+
+  .container2 {
       width: 100%;
-      height: 1600px;
-    }
-    .fixcontainer2{
-      width: 600px;
-      height: 400px;
+      height: 100vw; /* Changed height to vw */
+  }
+
+  .fixcontainer2 {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
       float: left;
   }
-    .Whattofix{
-      margin-left: 22%;
-      font-size: 50px;
-      margin-bottom: 30px;
-      margin-top: 20px;
-    }
-    .fix{
-      width: 600px;
-      height: 400px;
-      margin-left: 10%;
-      font-size: 30px;
-    }
+
+  .Whattofix {
+      margin-left: 6.875vw; /* Changed margin-left to vw */
+      font-size: 4vw; /* Changed font-size to vw */
+      margin-bottom: 1.875vw; /* Changed margin-bottom to vw */
+      margin-top: 1.25vw; /* Changed margin-top to vw */
   }
-  @media screen and (max-width: 800px) {
-    body{
+
+  .fix {
+      width: 37.5vw; /* Changed width to vw */
+      height: 25vw; /* Changed height to vw */
+      margin-left: 3.75vw; /* Changed margin-left to vw */
+      font-size: 2.5vw; /* Changed font-size to vw */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
       background-color: blue;
-    }
   }
-  @media screen and (max-width: 480px) {
-      body{
-        background-color: red;
-      }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+      background-color: red;
   }
+}
